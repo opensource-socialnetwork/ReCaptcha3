@@ -6,15 +6,16 @@ if(!$recaptcha->recaptcha_site_key){
 	return;	
 }
 ?>
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha->recaptcha_site_key ?>"></script>
 <script>
 	function grcaptcha3(){
-			grecaptcha.ready(function() {
+				grecaptcha.ready(function() {
             			grecaptcha.execute('<?php echo $recaptcha->recaptcha_site_key; ?>', {action:'validate_captcha'}).then(function(token) {
               			  		if($('#gcaptcha-token').length){
-								$('#gcaptcha-token').remove();	
-						}
-						$('#ossn-home-signup').append("<input type='hidden' id='gcaptcha-token' name='g-recaptcha-response' value='"+token+"' />");	
-           			});
+									$('#gcaptcha-token').remove();	
+								}
+								$('#ossn-home-signup').append("<input type='hidden' id='gcaptcha-token' name='g-recaptcha-response' value='"+token+"' />");	
+           				});
         		});		
 	}
 	$(document).ready(function(){
@@ -22,4 +23,3 @@ if(!$recaptcha->recaptcha_site_key){
 				setInterval(grcaptcha3, 6000);
 	});
 </script>
-<script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha->recaptcha_site_key ?>" async defer></script>
