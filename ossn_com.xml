@@ -6,10 +6,11 @@
     <description>Add a Google reCAPTCHA v3 on forms, This component is fork of ReCaptcha by Jonathan Goncalves and Captcha by Arsalan Shah.</description>
     <license>Open Source Social Network License (OSSN LICENSE) v4.0</license>
     <author_url>https://www.arsalanshah.com</author_url>
-    <version>1.1</version>
+    <license_url>http://www.opensource-socialnetwork.org/licence/</license_url>
+    <version>7.1</version>
 	<requires>
 		<type>ossn_version</type>
-		<version>6.0</version>
+		<version>7.1</version>
 	</requires>
 	<requires>
 		<type>ossn_component</type>
