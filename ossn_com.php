@@ -90,7 +90,7 @@ function recaptcha3_check($callback, $type, $params) {
 						));
 						exit();
 					} else {
-						ossn_trigger_message(ossn_print('recaptcha:error:low:score');
+						ossn_trigger_message(ossn_print('recaptcha:error:low:score'));
 						redirect(REF);
 					}
 
