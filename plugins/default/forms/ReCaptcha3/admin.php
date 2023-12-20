@@ -1,4 +1,15 @@
-    <p><?php echo ossn_print('recaptcha:com:note');?></p>
+<?php
+if($params['recaptcha'] === false){
+		$params['recaptcha'] = new stdClass();
+}
+if(!isset($params['recaptcha']->recaptcha_secret_key)){
+	$params['recaptcha']->recaptcha_secret_key = "";	
+}
+if(!isset($params['recaptcha']->recaptcha_site_key)){
+	$params['recaptcha']->recaptcha_site_key = "";	
+}
+?>
+ <p><?php echo ossn_print('recaptcha:com:note');?></p>
  <div>
  	<label><?php echo ossn_print('recaptcha:com:site_key');?></label>
     <input type="text" name="recaptcha_site_key" value="<?php echo $params['recaptcha']->recaptcha_site_key;?>" />
@@ -8,5 +19,5 @@
    <input type="text" name="recaptcha_secret_key" value="<?php echo $params['recaptcha']->recaptcha_secret_key;?>" />
  </div>
  <div>
- 	<input type="submit" class="ossn-admin-button btn btn-success" value="<?php echo ossn_print('contact:admin:form:button:save'); ?>"/>
+ 	<input type="submit" class="ossn-admin-button btn btn-success" value="<?php echo ossn_print('save'); ?>"/>
  </div>

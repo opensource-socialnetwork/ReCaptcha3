@@ -1,7 +1,7 @@
 <?php
 $recaptchaCom = new OssnComponents();
 $recaptcha = $recaptchaCom->getSettings('ReCaptcha3');
-if(!$recaptcha->recaptcha_site_key){
+if(!isset($recaptcha->recaptcha_site_key) || (isset($recaptcha->recaptcha_site_key) && empty($recaptcha->recaptcha_site_key))){
 	echo "<div class='alert alert-danger'>".ossn_print('recaptcha:configure')."</div>";
 	return;	
 }
